@@ -157,7 +157,7 @@ class TestBank(unittest.TestCase):
             'lastname': 'Ehrenfest',
         })
 
-        message = 'Recipient has no account yet!'
+        message = ':'
         with self.assertRaisesRegex(AssertionError, message):
             bank.add_transaction(sender=ehrenfest,
                                  recipient=einstein,
