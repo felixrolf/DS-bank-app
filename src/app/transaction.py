@@ -1,3 +1,5 @@
+import time
+
 class Transaction:
     def __init__(self, *, sender, recipient, subject, amount):
         assert isinstance(sender, int), 'Sender needs to be an integer'
@@ -8,6 +10,7 @@ class Transaction:
         self.recipient = recipient
         self.subject = subject
         self.amount = amount
+        self.timing = time.ctime()
 
     # def add_transaction(self, amount):
         # assert self.amount > 0.0 ,'Amount needs to be greater than 0'
