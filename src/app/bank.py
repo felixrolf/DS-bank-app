@@ -15,9 +15,7 @@ class Bank:
         print(f'Press [1] for Add Account')
         time.sleep(1)
         print(f'Press [2] for Add Transaction')
-        #prompt = int('To open a new bank account, Press 1')
-        #if prompt == 1:
-        #open_account()
+
 
 
 
@@ -33,7 +31,7 @@ class Bank:
         assert sender.number in self.accounts, 'Sender has no account yet!'
         assert recipient.number in self.accounts, 'Recipient has no account yet!'
         assert sender.balance > amount, 'Account has not enough funds'
-        transaction = {'sender': sender, 'recipient': recipient, 'subject': subject, 'amount': amount}
+        transaction = app.Transaction(sender=sender.number, recipient=recipient.number, subject=subject, amount=amount)
         self.transactions.append(transaction)
         self.accounts[sender.number].subtract_from_balance(amount)
         self.accounts[recipient.number].add_to_balance(amount)

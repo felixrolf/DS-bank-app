@@ -1,4 +1,5 @@
 import time
+import datetime
 
 class Transaction:
     def __init__(self, *, sender, recipient, subject, amount):
@@ -10,11 +11,13 @@ class Transaction:
         self.recipient = recipient
         self.subject = subject
         self.amount = amount
-        self.timing = time.ctime()
+        ts = time.time()
+        self.st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+
 
     # def add_transaction(self, amount):
         # assert self.amount > 0.0 ,'Amount needs to be greater than 0'
 
     def info(self):
         #'From 1 to 2: Test transaction - 10.0 €'
-        return f'From {self.sender} to {self.recipient}: {self.subject} - {self.amount} €'
+        return f'DATE {self.st} From {self.sender} to {self.recipient}: {self.subject} - {self.amount} €'
