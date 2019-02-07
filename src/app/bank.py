@@ -17,9 +17,6 @@ class Bank:
         print(f'Press [2] for Add Transaction')
 
 
-
-
-
     def open_account(self, account):
         assert isinstance(account, app.Account), 'Account should be an app.Account'
         assert account.number not in self.accounts, 'Account number 1 already taken!'
@@ -36,6 +33,9 @@ class Bank:
         self.accounts[sender.number].subtract_from_balance(amount)
         self.accounts[recipient.number].add_to_balance(amount)
         return transaction
+
+
+        #print(f'Die Summe aller Transaktionen beträgt {sum.transactions}')
 
 
 

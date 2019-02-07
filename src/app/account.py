@@ -24,7 +24,8 @@ class Account:
         new_balance = self.balance - amount
         self.balance = new_balance
 
-
+    def print_statement(self, amount):
+        print(f'Dein Kontostand beträgt {self.balance}')
 
 
 
