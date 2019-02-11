@@ -8,14 +8,13 @@ class Bank:
         self.accounts = {}
         self.transactions = []
         print(f'Hello customer! You are entering GLS. Please wait a few seconds...')
-        time.sleep(1)
+        time.sleep(2)
         print(f'-- Loading completed --')
         time.sleep(1)
         print()
         print(f'Press [1] for Add Account')
         time.sleep(1)
         print(f'Press [2] for Add Transaction')
-
 
     def open_account(self, account):
         assert isinstance(account, app.Account), 'Account should be an app.Account'
